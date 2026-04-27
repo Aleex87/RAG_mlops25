@@ -7,7 +7,9 @@ authors = [
     { name = "Aleex87", email = "alessandrodanteabbate@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "ipykernel>=7.2.0",
+]
 
 [project.scripts]
 rag = "rag:main"
