@@ -13,7 +13,7 @@ def setup_vector_db(path):
 
 def ingest_docs_to_vector_db(table):
     for file in DATA_PATH.glob("*.txt"):
-        with open(file) as f:
+        with open(file, encoding="utf-8") as f:
             content = f.read()
 
         document_name = file.name

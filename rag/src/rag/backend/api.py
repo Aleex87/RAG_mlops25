@@ -4,6 +4,11 @@ from rag.backend.data_models import Prompt, RagResponse
 
 app = FastAPI()
 
+@app.get("/health")
+async def health_check():
+    return{"status": "good"}
+
+
 
 @app.post("/rag/query")
 async def query_documentation(query: Prompt) -> RagResponse:

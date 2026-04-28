@@ -1,0 +1,11 @@
+services:
+  backend:
+    container_name: backend
+    build: 
+      context: . # that means we are in the same folder as docker-compose.yaml 
+      dockerfile: dockerfiles/backend.dockerfile
+    env_file:
+      - .env
+    image: backend:v1
+    ports:
+      - "8000:8000"
