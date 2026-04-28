@@ -258,7 +258,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "fastapi" },
-    { name = "lancedb", specifier = "==0.17" },
+    { name = "lancedb" },
     { name = "pydantic-ai" },
     { name = "uvicorn" },
 ]
@@ -2760,11 +2760,17 @@ name = "rag"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "backend" },
+    { name = "frontend" },
     { name = "ipykernel" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "ipykernel", specifier = ">=7.2.0" }]
+requires-dist = [
+    { name = "backend", editable = "src/rag/backend" },
+    { name = "frontend", editable = "src/rag/frontend" },
+    { name = "ipykernel", specifier = ">=7.2.0" },
+]
 
 [[package]]
 name = "referencing"
